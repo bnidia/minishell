@@ -6,7 +6,7 @@
 /*   By: fdonna <fdonna@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 17:33:15 by fdonna            #+#    #+#             */
-/*   Updated: 2022/07/12 19:28:43 by fdonna           ###   ########.fr       */
+/*   Updated: 2022/07/19 16:52:55 by fdonna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@ typedef enum e_token_type_
 	TOKEN_TYPE_MORE,
 	TOKEN_TYPE_MORE_DOUBLE,
 	TOKEN_TYPE_PIPE,
-	TOKEN_TYPE_NEWLINE
+	TOKEN_TYPE_NEWLINE,
+	TOKEN_TYPE_INPUT,
+	TOKEN_TYPE_OUTPUT,
 }	e_token_type;
 
 typedef struct s_token
@@ -56,6 +58,7 @@ typedef struct s_cmdline
 	int		execed;
 }	t_cmdline;
 
-void	token_list_free(t_token_list *token_list);
+t_token_list	*lex_tokenize(t_cmdline cmdline);
+void			token_list_free(t_token_list *token_list);
 
 # endif

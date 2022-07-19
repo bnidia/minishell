@@ -6,7 +6,7 @@
 /*   By: fdonna <fdonna@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 23:17:11 by fdonna            #+#    #+#             */
-/*   Updated: 2022/07/12 19:43:33 by fdonna           ###   ########.fr       */
+/*   Updated: 2022/07/19 16:47:17 by fdonna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	main(void)
 	if (env_lst_ptr != (t_env_list *)0)
 	{
 		while (minimain(env_lst_ptr) != MINIMAIN_EXIT)
-			break ;
+			;
 		env_list_free(env_lst_ptr);
 	}
 

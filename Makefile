@@ -6,7 +6,7 @@
 #    By: fdonna <fdonna@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/19 23:18:54 by fdonna            #+#    #+#              #
-#    Updated: 2022/07/12 16:30:32 by fdonna           ###   ########.fr        #
+#    Updated: 2022/07/19 17:01:02 by fdonna           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ LFT_SRC		:= $(shell find $(DEP_LIBFT) -name '*.c')
 LFT_OBJ		:= $(LFT_SRC:%.c=%.o)
 LFT_LIB		:= $(WORKSPACE)/libft/libft.a
 
-CFLAGS		:= -I$(INC) -I$(DEP_LIBFT) -Wall -Wextra -Werror -std=c99 -MMD -MP -g
+CFLAGS		:= -I$(INC) -I$(DEP_LIBFT) -Wall -Wextra -std=c99 -MMD -MP -g
 
 all: $(NAME)
 
@@ -58,7 +58,7 @@ $(NAME): $(OBJ) $(LFT_LIB)
 	░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n\
 	\n"
 	@$(PRINT) "$(COLOR_WHITE)Linking $(COLOR_GREEN)$@"
-	@$(CC) -lpthread -L$(DEP_LIBFT) -lft $(OBJ) -o $@
+	@$(CC) -lpthread -lreadline -L$(DEP_LIBFT) -lft $(OBJ) -o $@
 	@$(PRINT) "$(COLOR_WHITE) Done!\n"
 
 $(LFT_LIB):
